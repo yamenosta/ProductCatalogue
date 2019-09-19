@@ -30,6 +30,47 @@ public class Produit  implements Serializable{
 	private Date dateFabrication;
 	@ManyToOne
 	private Categorie categorie;
+	public Long getIdProduit() {
+		return idProduit;
+	}
+	public void setIdProduit(Long idProduit) {
+		this.idProduit = idProduit;
+	}
+	public String getNomPrduit() {
+		return nomPrduit;
+	}
+	public void setNomPrduit(String nomPrduit) {
+		this.nomPrduit = nomPrduit;
+	}
+	public Double getPrixProduit() {
+		return prixProduit;
+	}
+	public void setPrixProduit(Double prixProduit) {
+		this.prixProduit = prixProduit;
+	}
+	public Date getDateExpiration() {
+		return dateExpiration;
+	}
+	public void setDateExpiration(Date dateExpiration) {
+		this.dateExpiration = dateExpiration;
+	}
+	public Date getDateFabrication() {
+		return dateFabrication;
+	}
+	public void setDateFabrication(Date dateFabrication) {
+		this.dateFabrication = dateFabrication;
+	}
+	public Categorie getCategorie() {
+		return categorie;
+	}
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+	
+	
+	
+	
+	
 	
 
 }

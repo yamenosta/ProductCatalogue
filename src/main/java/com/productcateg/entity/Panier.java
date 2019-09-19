@@ -26,5 +26,31 @@ public class Panier implements Serializable {
 	private Collection<Produit> listProduit;
 	@OneToOne
 	private Client client;
+	public Long getIdPanier() {
+		return idPanier;
+	}
+	public void setIdPanier(Long idPanier) {
+		this.idPanier = idPanier;
+	}
+	public String getLibellePanier() {
+		return libellePanier;
+	}
+	public void setLibellePanier(String libellePanier) {
+		this.libellePanier = libellePanier;
+	}
+	public Collection<Produit> getListProduit() {
+		return listProduit;
+	}
+	public void setListProduit(Collection<Produit> listProduit) {
+		this.listProduit = listProduit;
+	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	
 
 }

@@ -23,5 +23,32 @@ public class Client implements Serializable {
 	private String prenomClient;
 	@OneToOne(mappedBy= "client")
 	private Panier panier;
+	public Long getIdClient() {
+		return idClient;
+	}
+	public void setIdClient(Long idClient) {
+		this.idClient = idClient;
+	}
+	public String getNomClient() {
+		return nomClient;
+	}
+	public void setNomClient(String nomClient) {
+		this.nomClient = nomClient;
+	}
+	public String getPrenomClient() {
+		return prenomClient;
+	}
+	public void setPrenomClient(String prenomClient) {
+		this.prenomClient = prenomClient;
+	}
+	public Panier getPanier() {
+		return panier;
+	}
+	public void setPanier(Panier panier) {
+		this.panier = panier;
+	}
+	
+	
+	
 
 }

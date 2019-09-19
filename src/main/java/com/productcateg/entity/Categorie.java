@@ -19,9 +19,30 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Categorie implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDCategorie;
+	private Long idCategorie;
 	private String nomCategorie;
 	@OneToMany(mappedBy= "categorie")
 	private Collection<Produit> listProduits;
+	public Long getIDCategorie() {
+		return idCategorie;
+	}
+	public void setIDCategorie(Long iDCategorie) {
+		idCategorie = iDCategorie;
+	}
+	public String getNomCategorie() {
+		return nomCategorie;
+	}
+	public void setNomCategorie(String nomCategorie) {
+		this.nomCategorie = nomCategorie;
+	}
+	public Collection<Produit> getListProduits() {
+		return listProduits;
+	}
+	public void setListProduits(Collection<Produit> listProduits) {
+		this.listProduits = listProduits;
+	}
+	
+	
+	
 
 }
