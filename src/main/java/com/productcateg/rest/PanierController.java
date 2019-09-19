@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +16,15 @@ import com.productcateg.entity.Produit;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/Produit")
+@RequestMapping("/Panier")
 public class PanierController {
 	@Autowired
 	private PanierService panierService;
+	
+	@RequestMapping(value="/InitPanier", method=RequestMethod.POST)
+	public Panier initialiserPanier(@RequestBody Panier panier) {
+		return panierService.ajoutPanier( panier);
+	}
 	
 	@RequestMapping(value="/ProduitDuPanier/{idPanier}", method=RequestMethod.GET)
 	public Collection<Produit> produitDuPanier(@PathVariable Long idPanier){

@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import com.productcateg.entity.Client;
-
+import com.productcateg.entity.Role;
 @RepositoryRestResource
-public interface ClientRepository extends JpaRepository<Client, Long> {
-	@Query("select u from Client u where u.nameClient = :x")
-	public Client findByNameClient (@Param("x")String nameClient );
+public interface RoleRepository extends JpaRepository<Role, Long>  {
+	
+	@Query("select r from Role r where r.roleName = :x")
+	public Role findByRoleName (@Param("x")String roleName);
+
 }

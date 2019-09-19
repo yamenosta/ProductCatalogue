@@ -1,12 +1,21 @@
 package com.productcateg.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+
+
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,34 +28,12 @@ import lombok.NoArgsConstructor;
 public class Client implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idClient;
-	private String nomClient;
-	private String prenomClient;
-	@OneToOne(mappedBy= "client")
-	private Panier panier;
-	public Long getIdClient() {
-		return idClient;
-	}
-	public void setIdClient(Long idClient) {
-		this.idClient = idClient;
-	}
-	public String getNomClient() {
-		return nomClient;
-	}
-	public void setNomClient(String nomClient) {
-		this.nomClient = nomClient;
-	}
-	public String getPrenomClient() {
-		return prenomClient;
-	}
-	public void setPrenomClient(String prenomClient) {
-		this.prenomClient = prenomClient;
-	}
-	public Panier getPanier() {
-		return panier;
-	}
-	public void setPanier(Panier panier) {
-		this.panier = panier;
-	}
+	private String nameClient;
+	@JsonProperty(access=Access.WRITE_ONLY)
+	private String password;
+	@ManyToMany (fetch=FetchType.EAGER)
+	private Collection<Role> roles= new ArrayList<>();
+	
 	
 	
 	

@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Produit  implements Serializable{
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduit;
 	private String nomPrduit;
@@ -30,6 +31,11 @@ public class Produit  implements Serializable{
 	private Date dateFabrication;
 	@ManyToOne
 	private Categorie categorie;
+	
+	
+	
+	
+	
 	public Long getIdProduit() {
 		return idProduit;
 	}
@@ -65,6 +71,11 @@ public class Produit  implements Serializable{
 	}
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+	public Produit(Long idProduit, String nomPrduit) {
+		super();
+		this.idProduit = idProduit;
+		this.nomPrduit = nomPrduit;
 	}
 	
 	

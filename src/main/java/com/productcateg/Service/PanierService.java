@@ -8,6 +8,7 @@ import com.productcateg.entity.Produit;
 
 public interface PanierService {
 	
+	public Panier ajoutPanier(Panier panier);
 	public Panier ajoutProduitToPanier(Long idPanier, Long idProduit);
 	public Panier enleverProduitFromPanier(Long idPanier, Long idProduit);
 	public Panier viderPanier(Long idPanier);

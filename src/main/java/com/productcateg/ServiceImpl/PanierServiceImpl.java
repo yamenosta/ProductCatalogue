@@ -21,17 +21,15 @@ public class PanierServiceImpl implements PanierService {
 
 	@Override
 	public Panier ajoutProduitToPanier(Long idPanier, Long idProduit) {
-		try {
+	
 		Panier panier = panierRepository.getOne(idPanier);
 		Produit produit = produitRepository.getOne(idProduit);
 		Collection<Produit> listProduit = panier.getListProduit();
 		listProduit.add(produit);
 		panier.setListProduit(listProduit);
 		return panierRepository.save(panier);
-		}
-		catch (Exception e) {
-			return null;
-		}
+	
+		
 		
 		
 	}
@@ -70,6 +68,16 @@ public class PanierServiceImpl implements PanierService {
 	public Collection<Produit> produitDuPanier(Long idPanier) {
 		try {
 		return panierRepository.getOne(idPanier).getListProduit();
+		}
+		catch (Exception e) {
+			return null;
+		}
+	}
+
+	@Override
+	public Panier ajoutPanier(Panier panier) {
+		try {
+			return panierRepository.save(panier);
 		}
 		catch (Exception e) {
 			return null;

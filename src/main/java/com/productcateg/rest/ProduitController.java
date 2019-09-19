@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,13 +27,13 @@ public class ProduitController {
 		return produitService.getAllProduit();
 	}
 	
-	@RequestMapping(value="/ajoutProduit", method=RequestMethod.POST)
-	public Produit ajoutProduit(Produit produit, Long idCateg) {
+	@RequestMapping(value="/ajoutProduit/{idCateg}", method=RequestMethod.POST)
+	public Produit ajoutProduit(@RequestBody Produit produit, @PathVariable Long idCateg) {
 		return produitService.ajoutProduit(produit, idCateg);
 	}
 	
 	@RequestMapping(value="/modifProduit", method=RequestMethod.PATCH)
-	public Produit updatetProduit(Produit produit) {
+	public Produit updatetProduit(@RequestBody  Produit produit) {
 		return produitService.modifierProduit(produit);
 	}
 	
