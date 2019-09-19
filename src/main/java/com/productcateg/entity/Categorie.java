@@ -26,6 +26,25 @@ public class Categorie implements Serializable {
 	public Long getIDCategorie() {
 		return idCategorie;
 	}
+	
+	
+	
+	public Categorie(Long idCategorie, String nomCategorie) {
+		super();
+		this.idCategorie = idCategorie;
+		this.nomCategorie = nomCategorie;
+		
+	}
+
+
+
+	public Categorie() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public void setIDCategorie(Long iDCategorie) {
 		idCategorie = iDCategorie;
 	}
